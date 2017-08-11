@@ -17,7 +17,6 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
-        print(x)
         set <- function(y) {
                 x <<- y
                 inv <<- NULL
@@ -48,15 +47,13 @@ cacheSolve <- function(x, ...) {
         inv
 }
 
-## Testing code
-
-# set seed and do a test run
-set.seed(41)
-X <- matrix(rnorm(9),3,3)
-M <- makeCacheMatrix(X)
-cacheSolve(M)
-
-# running a second time should yield "getting cached inverse" message
-cacheSolve(M)
-
-
+# ## Testing code
+# 
+# # set seed and do a test run
+# set.seed(41)
+# X <- matrix(rnorm(9),3,3)
+# M <- makeCacheMatrix(X)
+# cacheSolve(M)
+# 
+# # running a second time should yield "getting cached inverse" message
+# cacheSolve(M)
